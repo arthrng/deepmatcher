@@ -259,6 +259,8 @@ def process_unlabeled(path, trained_model, ignore_columns=None):
     dataset = MatchingDataset(path=path, **dataset_args)
 
     # Make sure we have the same attributes.
+    print(train_info.all_text_fields)
+    print(dataset.all_text_fields)
     assert set(dataset.all_text_fields) == set(train_info.all_text_fields)
 
     after_load = timer()
